@@ -1,101 +1,158 @@
+import ExperienceCard from "@/components/experience";
+import LanguageCard from "@/components/language_card";
+import ProjectCard from "@/components/project_card";
+import { dbClouds } from "@/config/db_cloud";
+import { experience } from "@/config/experience";
+import { frameworks } from "@/config/framesworks";
+import { languages } from "@/config/languages";
+import { projects } from "@/config/projects";
+import { AppwriteIcon, DartIcon, FlutterIcon, JavaIcon, JavaScriptIcon, SpringIcon, SupabaseIcon } from "developer-icons";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="pb-20">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section id="about" className="flex flex-col md:flex-row  w-full py-10 justify-between gap-10 items-center">
+        <div className="flex flex-col ">
+          <p className="text-4xl font-bold">
+            Hi I'm Navpreet Singh
+          </p>
+          <p className="text-2xl">
+            Software Engineer
+          </p>
+          <p className="pt-4 text-lg">
+            Software engineer with 1+ years of experience, skilled in building high-quality applications and solving complex challenges. Top 1% Guardian on LeetCode, with expertise in Flutter, Next.js, and Java for developing robust, scalable systems. Passionate about continuous learning and innovative problem-solving.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <Image src="/profile.jpg" height={400} width={400} alt="Profile" style={{
+          borderRadius: '80px',
+          backgroundColor: 'transparent',
+
+        }} />
+
+      </section>
+
+      <section id="leetcode">
+        <p className="text-3xl font-bold">
+          Leetcode Stats
+        </p>
+        <hr />
+        <div className="flex flex-col md:flex-row">
+          <iframe src="https://leetcard.jacoblin.cool/navpreetsingh951818?theme=light&font=Faustina&ext=contest" width="100%" height="260" title="daily.dev" style={{
+            borderRadius: '10px',
+            overflow: 'hidden',
+            backgroundColor: 'transparent',
+          }}></iframe>
+          <iframe src="https://leetcard.jacoblin.cool/navpreetsingh951818?theme=light&font=Faustina&ext=heatmap" width="100%" height="260" title="daily.dev" style={{
+            borderRadius: '10px',
+            overflow: 'hidden',
+            backgroundColor: 'transparent',
+          }}></iframe>
+          <iframe src="https://leetcard.jacoblin.cool/navpreetsingh951818?theme=light&font=Faustina&ext=activity" width="100%" height="260" title="daily.dev" style={{
+            borderRadius: '10px',
+            overflow: 'hidden',
+            backgroundColor: 'transparent',
+          }}></iframe>
+
+
+        </div>
+      </section>
+
+      <div className="mt-8" id="skills">
+        <p className="text-3xl font-bold">
+          Skills
+        </p>
+        <hr />
+        <div>
+          <p className="text-md font-bold">
+            Languages
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {
+              languages.map((language) => (
+                <LanguageCard key={language.name} name={language.name} >
+                  {language.icon}
+                </LanguageCard>
+              ))
+            }
+          </div>
+
+        </div>
+        <div>
+          <p className="text-md font-bold">
+            Frameworks/Tools
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {
+              frameworks.map((language) => (
+                <LanguageCard key={language.name} name={language.name} >
+                  {language.icon}
+                </LanguageCard>
+              ))
+            }
+          </div>
+        </div>
+        <div>
+          <p className="text-md font-bold">
+            Databases/Cloud Services
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {
+              dbClouds.map((language) => (
+                <LanguageCard key={language.name} name={language.name} >
+                  {language.icon}
+                </LanguageCard>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+
+      <div className="flex flex-col mt-4" id="projects">
+        <p className="text-3xl font-bold">
+          Projects
+        </p>
+        <hr />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+          {
+            projects.map((project) => (
+              <ProjectCard key={project.name} {...project} />
+            ))
+          }        </div>
+      </div>
+
+      <div className="flex flex-col mt-8" id="experience">
+        <p className="text-3xl font-bold">
+          Work Experience
+        </p>
+        <hr />
+        <div className="flex flex-col mt-8">
+          {
+            experience.map((exp) => (
+              <ExperienceCard key={exp.company} {...exp} />
+            ))
+          }
+        </div>
+      </div>
+
+      <div className="mt-8" id="contact">
+        <p className="text-3xl font-bold">
+          Contact Info
+        </p>
+        <hr />
+        <div className="flex flex-col gap-4">
+          <div>
+            <p className="text-lg font-bold">
+              Email
+            </p>
+            <p>
+              navpreetsingh951818@gmail.com</p>
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

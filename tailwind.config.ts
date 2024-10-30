@@ -12,6 +12,15 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        scribble: 'scribble 1s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        scribble: {
+          '0%': { clipPath: 'inset(0 100% 0 0)' },
+          '100%': { clipPath: 'inset(0 0 0 0)' },
+        },
+      },
     },
   },
   plugins: [],
